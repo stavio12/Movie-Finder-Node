@@ -33,17 +33,6 @@ app.get("/results", (req, res) => {
   });
 });
 
-// app.post("/", (req, res) => {
-//   let userInput = req.body.search;
-
-//   if (userInput.toLowerCase() !== "") {
-//     console.log(userInput);
-//     res.redirect("/search", { userInput: userInput });
-//   } else {
-//     console.log("Herh Gyae gyimi");
-//   }
-// });
-
 app.listen(2020, () => {
   console.log("Server running on port 2020");
 });
