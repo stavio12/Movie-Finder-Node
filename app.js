@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-Parser");
 const request = require("request");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
 
@@ -20,7 +22,7 @@ app.get("/", (req, res) => {
 app.get("/results", (req, res) => {
   let query = req.query.search;
 
-  request("https://api.themoviedb.org/3/search/movie?api_key=8f864e2ec8c367dffca6741f68c59409&query=" + query, (error, response, body) => {
+  request(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIEAPI}&query=` + query, (error, response, body) => {
     if (error) {
       console.log(error);
     }
